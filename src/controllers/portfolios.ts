@@ -11,8 +11,8 @@ declare global {
   }
 }
 @controller("/api/v1/portfolios")
-export class PortfolioController {
-  @get("")
+class PortfolioController {
+  @get("/")
   async getPortfolios(req: Request, res: Response) {
     const portfolios = await Portfolio.find({});
     return res.json(portfolios);
@@ -28,25 +28,28 @@ export class PortfolioController {
     }
   }
 
-  @post("")
-  @use(checkJwt)
+  @post("/")
   @use(checkRole("admin"))
+  @use(checkJwt)
   async createPortfolio(req: Request, res: Response) {
     const portfolioData = req.body;
+    console.log("portfoliodata", portfolioData);
     const userId = req.user.sub;
     const portfolio = new Portfolio(portfolioData);
     portfolio.userId = userId;
 
     try {
+      console.log("i am presaved");
       const newPortfolio = await portfolio.save();
+      console.log("i am after saved");
       return res.json(newPortfolio);
     } catch (error) {
       return res.status(422).send(error.message);
     }
   }
   @patch("/:id")
-  @use(checkJwt)
   @use(checkRole("admin"))
+  @use(checkJwt)
   async updatePortfolio(req: Request, res: Response) {
     const {
       body,
@@ -64,8 +67,8 @@ export class PortfolioController {
     }
   }
   @del("/:id")
-  @use(checkJwt)
   @use(checkRole("admin"))
+  @use(checkJwt)
   async deletePortfolio(req: Request, res: Response) {
     const portfolio = await Portfolio.findOneAndRemove({ _id: req.params.id });
     if (portfolio) {

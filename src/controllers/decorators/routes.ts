@@ -7,7 +7,7 @@ interface RouteHandlerDescriptor extends PropertyDescriptor {
   //  decorate only the methods that are called with req,res
   value?: RequestHandler;
 }
-
+// decorator factory, decorator that returs a function
 function routeBinder(method: string) {
   return function (path: string) {
     return function (target: any, key: string, desc: RouteHandlerDescriptor) {

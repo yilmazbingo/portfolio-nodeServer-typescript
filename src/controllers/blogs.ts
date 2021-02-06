@@ -9,12 +9,12 @@ import { get, controller, use, post, patch } from "./decorators";
 interface Authors {
   [key: string]: Author;
 }
-
 interface Author {
   user_id: string;
 }
+
 @controller("/api/v1/blogs")
-export class BlogController {
+class BlogController {
   _saveBlog = async (blog: BlogDoc): Promise<BlogDoc> => {
     try {
       const createdBlog = await blog.save();
@@ -31,8 +31,9 @@ export class BlogController {
       throw e;
     }
   };
-  @get("")
+  @get("/")
   async getBlogs(req: Request, res: Response) {
+    console.log("uilm");
     const blogs = await Blog.find({ status: "published" }).sort({
       createdAt: -1,
     });
@@ -50,9 +51,10 @@ export class BlogController {
     return res.json(blogsWithUsers);
   }
   @get("/me")
-  @use(checkJwt)
   @use(checkRole("admin"))
+  @use(checkJwt)
   async getBlogsByUser(req: Request, res: Response) {
+    console.log("checkjwt", checkJwt);
     const userId = req.user.sub;
     const blogs = await Blog.find({
       userId,
@@ -77,9 +79,9 @@ export class BlogController {
     return res.json({ blog, author });
   }
 
-  @post("")
-  @use(checkJwt)
+  @post("/")
   @use(checkRole("admin"))
+  @use(checkJwt)
   async createBlog(req: Request, res: Response) {
     const blogData = req.body;
     console.log("checking req.user in createBlog");
@@ -95,8 +97,8 @@ export class BlogController {
   }
 
   @patch("/:id")
-  @use(checkJwt)
   @use(checkRole("admin"))
+  @use(checkJwt)
   async updateBlog(req: Request, res: Response) {
     const {
       body,

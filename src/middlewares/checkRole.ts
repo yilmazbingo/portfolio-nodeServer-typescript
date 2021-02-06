@@ -4,12 +4,17 @@ export const checkRole = (role: string) => (
   res: Response,
   next: NextFunction
 ) => {
-  let user: string | undefined;
-  if (req.user) {
-    user = req.user;
-  }
-  // user[config.AUTH0_NAMESPACE + "/roles"] is an array of roles
-  if (user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role)) {
+  // let user: { [key: string]: string } = {};
+  let user: Record<string, any> = {};
+  user = req.user;
+  console.log("user", user);
+  console.log("i ma in checkrole middleware");
+  console.log("process.env.AUTH0_NAMESPACE", process.env.AUTH0_NAMESPACE);
+  // console.log("user.process", user[process.env.AUTH0_NAMESPACE!]);
+  const userRoles = Object.keys(user)[0];
+  console.log("userRoles", user[userRoles]);
+  // if (user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role)) {
+  if (user && user[userRoles].includes(role)) {
     next();
   } else {
     return res

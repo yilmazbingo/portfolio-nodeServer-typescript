@@ -1,34 +1,18 @@
 import { AppRouter } from "./../../AppRouter";
-// it will iterate over all of the different properties of the class' prototype and it's going to see if those methods have any metada associated with them. i fthey do, it  is going to take that medata infromation and associate it with express router
+// it will iterate over all of the different properties of the class' prototype and it's going to see if those methods have any metada associated with them. if they do, it  is going to take that medata infromation and associate it with express router
 
 //  controller will take prefix "/auth"
 import "reflect-metadata";
 // import { AppRouter } from "../../AppRouter";
 import { Methods } from "../enums/Methods";
 import { MetadataKeys } from "../enums/MetadataKeys";
-import { RequestHandler, NextFunction, Request, Response } from "express";
 
-// function bodyValidators(keys: string): RequestHandler {
-//   return function (req: Request, res: Response, next: NextFunction) {
-//     if (!req.body) {
-//       res.status(422).send("invalid request");
-//       return;
-//     }
-//     for (let key of keys) {
-//       if (!req.body[key]) {
-//         res.status(422).send("invalid request");
-//         return;
-//       }
-//     }
-//     next();
-//   };
-// }
-
+// this decorator will be called last
 export function controller(routePrefix: string) {
-  // target is the constructor function of the class. if we apply decorator to a method, its target would be the prototype
+  // target is the constructor function of the class butif we apply decorator to a method, its target would be the prototype
   return function (target: Function) {
     const router = AppRouter.getInstance();
-    // retrieing the routes and methods
+    // for ..in goes all enumerable properties of
     for (let key in target.prototype) {
       const routeHandler = target.prototype[key]; //getLogin
       const path = Reflect.getMetadata(
@@ -49,6 +33,9 @@ export function controller(routePrefix: string) {
       //     Reflect.getMetadata(MetadataKeys.Validator, target.prototype, key) ||
       //     [];
       //   const validator = bodyValidators(requiredBodyProps);
+
+      // not all keys in prototype has "path" property
+      console.log("middlewares", middlewares);
       if (path) {
         router[method](
           `${routePrefix}${path}`,

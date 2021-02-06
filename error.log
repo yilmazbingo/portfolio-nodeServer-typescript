@@ -1,0 +1,60 @@
+{"errno":-2,"code":"ENOENT","syscall":"stat","path":"/home/tesla/Documents/projects/portfolio/server-for-portfolio/dist/index.html","expose":false,"statusCode":404,"status":404,"level":"error","service":"user-service"}
+{"errno":-2,"code":"ENOENT","syscall":"stat","path":"/home/tesla/Documents/projects/portfolio/server-for-portfolio/dist/index.html","expose":false,"statusCode":404,"status":404,"level":"error","service":"user-service"}
+{"errno":-2,"code":"ENOENT","syscall":"stat","path":"/home/tesla/Documents/projects/portfolio/server-for-portfolio/dist/index.html","expose":false,"statusCode":404,"status":404,"level":"error","service":"user-service"}
+{"errno":-2,"code":"ENOENT","syscall":"stat","path":"/home/tesla/Documents/projects/portfolio/server-for-portfolio/dist/index.html","expose":false,"statusCode":404,"status":404,"level":"error","service":"user-service"}
+{"errno":-2,"code":"ENOENT","syscall":"stat","path":"/home/tesla/Documents/projects/portfolio/server-for-portfolio/dist/index.html","expose":false,"statusCode":404,"status":404,"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
