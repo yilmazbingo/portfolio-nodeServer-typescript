@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { CustomError } from "../error-types";
-import { logger } from "../helpers/winston-logger";
+import { logger } from "../helpers";
 
 export const errorHandler = (
   error: CustomError,
