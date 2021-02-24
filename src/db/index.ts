@@ -3,9 +3,13 @@ import { DatabaseConnectionError } from "../error-types";
 import "./models/Portfolio";
 import "./models/Blog";
 
+const DB_URI =
+  process.env.NODE_ENV === "development"
+    ? process.env.DB_URI
+    : process.env.DB_PROD_URI;
 export const connect = () => {
   return mongoose.connect(
-    process.env.DB_URI!,
+    DB_URI!,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

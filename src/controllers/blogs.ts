@@ -12,28 +12,28 @@ interface Authors {
 interface Author {
   user_id: string;
 }
+const _saveBlog = async (blog: BlogDoc): Promise<BlogDoc> => {
+  try {
+    const createdBlog = await blog.save();
+    return createdBlog;
+  } catch (e) {
+    // e.code===11000 comes from slug
+
+    if (e.code === 11000 && e.keyPattern && e.keyPattern.slug) {
+      blog.slug += `-${uniqueSlug()}`;
+      // recursion. if there is error, i create a new slug and call it again
+      return _saveBlog(blog);
+    }
+    console.log("e in save blog", e);
+
+    throw e;
+  }
+};
 
 @controller("/api/v1/blogs")
 class BlogController {
-  _saveBlog = async (blog: BlogDoc): Promise<BlogDoc> => {
-    try {
-      const createdBlog = await blog.save();
-      return createdBlog;
-    } catch (e) {
-      // e.code===11000 comes from slug
-
-      if (e.code === 11000 && e.keyPattern && e.keyPattern.slug) {
-        blog.slug += `-${uniqueSlug()}`;
-        // recursion. if there is error, i create a new slug and call it again
-        return this._saveBlog(blog);
-      }
-
-      throw e;
-    }
-  };
   @get("/")
   async getBlogs(req: Request, res: Response) {
-    console.log("uilm");
     const blogs = await Blog.find({ status: "published" }).sort({
       createdAt: -1,
     });
@@ -54,7 +54,7 @@ class BlogController {
   @use(checkRole("admin"))
   @use(checkJwt)
   async getBlogsByUser(req: Request, res: Response) {
-    console.log("checkjwt", checkJwt);
+    // console.log("checkjwt", checkJwt);
     const userId = req.user.sub;
     const blogs = await Blog.find({
       userId,
@@ -62,11 +62,30 @@ class BlogController {
     });
     return res.json(blogs);
   }
-
   @get("/:id")
   async getBlogById(req: Request, res: Response) {
+    if (
+      [
+        "react",
+        "javascript",
+        "nodejs",
+        "blockchain",
+        "angular",
+        "python",
+      ].includes(req.params.id)
+    ) {
+      const blogs = await Blog.find({
+        field: req.params.id,
+        status: "published",
+      });
+      if (blogs) {
+        return res.json(blogs);
+      } else {
+        return res.json({ error: "no blog found" });
+      }
+    }
     const blog = await Blog.findById(req.params.id);
-    return res.json(blog);
+    if (blog && blog.status === "published") return res.json(blog);
   }
   @get("/s/:slug")
   async getBlogBySlug(req: Request, res: Response) {
@@ -83,9 +102,15 @@ class BlogController {
   @use(checkRole("admin"))
   @use(checkJwt)
   async createBlog(req: Request, res: Response) {
-    const blogData = req.body;
-    console.log("checking req.user in createBlog");
+    let blogData = req.body;
+    // console.log("checking req.user in createBlog", req.user);
     blogData.userId = req.user.sub;
+    const { access_token } = await getAccessToken();
+    // console.log("Access tokenn--", access_token);
+
+    const author = await getAuth0User(access_token)(req.user.sub);
+    blogData.author = author.nickname;
+
     const blog = new Blog(blogData);
 
     try {
@@ -100,31 +125,36 @@ class BlogController {
   @use(checkRole("admin"))
   @use(checkJwt)
   async updateBlog(req: Request, res: Response) {
+    console.log("this in patch", this);
     const {
       body,
       params: { id },
     } = req;
-    Blog.findById(id, async (err: Error, blog: BlogDoc) => {
-      if (err) {
-        return res.status(422).send(err.message);
-      }
+    let blog: BlogDoc;
+    try {
+      blog = (await Blog.findById(id)) as BlogDoc;
+    } catch (err) {
+      return res.status(422).send(err.message);
+    }
 
-      if (body.status && body.status === "published" && !blog.slug) {
-        blog.slug = slugify(blog.title, {
-          replacement: "-",
-          lower: true,
-        });
-      }
-      //this not updating  or making a req to db. it just updating the values.
-      blog.set(body);
-      blog.updatedAt = new Date();
+    if (body.status && body.status === "published" && !blog.slug) {
+      blog.slug = slugify(blog.title, {
+        replacement: "-",
+        lower: true,
+      });
+    }
+    //this not updating  or making a req to db. it just updating the values.
+    blog.set(body);
+    blog.updatedAt = new Date();
+    // console.log("_this ", this._saveBlog);
 
-      try {
-        const updatedBlog = await this._saveBlog(blog);
-        return res.json(updatedBlog);
-      } catch (err) {
-        return res.status(422).send(err.message);
-      }
-    });
+    try {
+      const updatedBlog = await _saveBlog(blog);
+      return res.json(updatedBlog);
+    } catch (err) {
+      console.log("err in server updating", err.message);
+
+      return res.status(422).send(err.message);
+    }
   }
 }

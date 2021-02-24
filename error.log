@@ -58,3 +58,64 @@
 {"level":"error","service":"user-service"}
 {"level":"error","service":"user-service"}
 {"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"jwt malformed","code":"invalid_token","status":401,"inner":{"name":"JsonWebTokenError","message":"jwt malformed"},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"yilm\"","kind":"ObjectId","value":"yilm","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"yilm\"","kind":"ObjectId","value":"yilm","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"react\"","kind":"ObjectId","value":"react","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"javascript\"","kind":"ObjectId","value":"javascript","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"No authorization token was found","code":"credentials_required","status":401,"inner":{"message":"No authorization token was found"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"No authorization token was found","code":"credentials_required","status":401,"inner":{"message":"No authorization token was found"},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"No authorization token was found","code":"credentials_required","status":401,"inner":{"message":"No authorization token was found"},"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"stringValue":"\"sdadsds\"","kind":"ObjectId","value":"sdadsds","path":"_id","reason":{},"level":"error","service":"user-service"}
+{"name":"UnauthorizedError","message":"No authorization token was found","code":"credentials_required","status":401,"inner":{"message":"No authorization token was found"},"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}

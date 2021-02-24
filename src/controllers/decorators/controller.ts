@@ -35,7 +35,6 @@ export function controller(routePrefix: string) {
       //   const validator = bodyValidators(requiredBodyProps);
 
       // not all keys in prototype has "path" property
-      console.log("middlewares", middlewares);
       if (path) {
         router[method](
           `${routePrefix}${path}`,

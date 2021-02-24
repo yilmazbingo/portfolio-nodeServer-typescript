@@ -8,11 +8,10 @@ export const checkRole = (role: string) => (
   let user: Record<string, any> = {};
   user = req.user;
   console.log("user", user);
-  console.log("i ma in checkrole middleware");
-  console.log("process.env.AUTH0_NAMESPACE", process.env.AUTH0_NAMESPACE);
+  // console.log("process.env.AUTH0_NAMESPACE", process.env.AUTH0_NAMESPACE);
   // console.log("user.process", user[process.env.AUTH0_NAMESPACE!]);
   const userRoles = Object.keys(user)[0];
-  console.log("userRoles", user[userRoles]);
+  // console.log("userRoles", user[userRoles]);
   // if (user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role)) {
   if (user && user[userRoles].includes(role)) {
     next();

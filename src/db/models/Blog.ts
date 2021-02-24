@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 export interface BlogDoc extends Document {
   slug: string;
   title: string;
-  subTitle: string;
+  field: string;
+  // subTitle: string;
   content: string;
   userId: string;
   status: string;
@@ -17,9 +18,10 @@ const blogSchema = new Schema({
   // slug is used in the blogs for readability
   slug: { type: String, unique: true, sparse: true },
   title: { type: String, required: true, maxlength: 96 },
-  subTitle: { type: String, required: true },
+  field: { type: String, required: true },
   content: { type: String, required: true },
   userId: { type: String, required: true },
+  author: { type: String, required: true },
   status: {
     type: String,
     default: "draft",

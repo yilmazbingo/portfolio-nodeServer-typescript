@@ -8,7 +8,6 @@ export function use(middleware: RequestHandler | jwtRequestHandler) {
   // target is the object prototype
   return function (target: any, key: string, desc: PropertyDescriptor) {
     // this decorator has to be called many times. so we are storing an array of middlewares
-    console.log("i am inside use");
     const middlewares =
       Reflect.getMetadata(MetadataKeys.Middleware, target, key) || [];
     Reflect.defineMetadata(
