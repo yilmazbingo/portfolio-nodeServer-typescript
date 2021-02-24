@@ -30,9 +30,9 @@ import { Debugger } from "debug";
 //     }
 //   }
 // }
-declare module NodeJS  {
-  interface Global {
-    logger: Debugger;
-
-  }
-export default NodeJS;
+// declare module NodeJS {
+//   interface Global {
+//     logger: Debugger;
+//   }
+// }
+// export default NodeJS;
