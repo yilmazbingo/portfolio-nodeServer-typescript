@@ -4,6 +4,7 @@ import "./models/Portfolio";
 import "./models/Blog";
 import { DB_URI } from "../constants";
 
+console.log("dbuti", DB_URI);
 export const connect = () => {
   return mongoose.connect(
     DB_URI!,
