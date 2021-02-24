@@ -24,7 +24,6 @@ const _saveBlog = async (blog: BlogDoc): Promise<BlogDoc> => {
       // recursion. if there is error, i create a new slug and call it again
       return _saveBlog(blog);
     }
-    console.log("e in save blog", e);
 
     throw e;
   }
@@ -54,7 +53,6 @@ class BlogController {
   @use(checkRole("admin"))
   @use(checkJwt)
   async getBlogsByUser(req: Request, res: Response) {
-    // console.log("checkjwt", checkJwt);
     const userId = req.user.sub;
     const blogs = await Blog.find({
       userId,
@@ -103,10 +101,8 @@ class BlogController {
   @use(checkJwt)
   async createBlog(req: Request, res: Response) {
     let blogData = req.body;
-    // console.log("checking req.user in createBlog", req.user);
     blogData.userId = req.user.sub;
     const { access_token } = await getAccessToken();
-    // console.log("Access tokenn--", access_token);
 
     const author = await getAuth0User(access_token)(req.user.sub);
     blogData.author = author.nickname;
@@ -125,7 +121,6 @@ class BlogController {
   @use(checkRole("admin"))
   @use(checkJwt)
   async updateBlog(req: Request, res: Response) {
-    console.log("this in patch", this);
     const {
       body,
       params: { id },
@@ -146,14 +141,11 @@ class BlogController {
     //this not updating  or making a req to db. it just updating the values.
     blog.set(body);
     blog.updatedAt = new Date();
-    // console.log("_this ", this._saveBlog);
 
     try {
       const updatedBlog = await _saveBlog(blog);
       return res.json(updatedBlog);
     } catch (err) {
-      console.log("err in server updating", err.message);
-
       return res.status(422).send(err.message);
     }
   }

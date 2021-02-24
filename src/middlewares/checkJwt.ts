@@ -22,5 +22,3 @@ export const checkJwt = jwt({
 });
 
 // next();
-
-console.log("Cehckjwt", checkJwt);

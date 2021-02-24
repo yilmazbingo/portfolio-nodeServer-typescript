@@ -1,5 +1,12 @@
+import Debug, { Debugger } from "debug";
+
+const logger = Debug("dev");
+
 import { connect } from "./db";
 import { app } from "./app";
+
+//  declare function logger:debugger
+//  global.logger=debugger
 
 const start = async () => {
   if (!process.env.DB_URI) {
@@ -9,7 +16,7 @@ const start = async () => {
   const PORT = process.env.PORT;
 
   app.listen(PORT, () => {
-    console.log("Server ready on port:", PORT);
+    logger("Server ready on port:", PORT);
   });
 };
 

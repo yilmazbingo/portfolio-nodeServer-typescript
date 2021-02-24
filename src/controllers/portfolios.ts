@@ -33,15 +33,12 @@ class PortfolioController {
   @use(checkJwt)
   async createPortfolio(req: Request, res: Response) {
     const portfolioData = req.body;
-    console.log("portfoliodata", portfolioData);
     const userId = req.user.sub;
     const portfolio = new Portfolio(portfolioData);
     portfolio.userId = userId;
 
     try {
-      console.log("i am presaved");
       const newPortfolio = await portfolio.save();
-      console.log("i am after saved");
       return res.json(newPortfolio);
     } catch (error) {
       return res.status(422).send(error.message);
