@@ -1,7 +1,7 @@
 import Debug, { Debugger } from "debug";
 
 const logger = Debug("dev");
-
+logger("process ", process.env.DB_PROD_URI);
 import { connect } from "./db";
 import { app } from "./app";
 

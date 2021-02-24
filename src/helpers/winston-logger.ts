@@ -2,6 +2,7 @@ import MongoDB, { MongoDBTransportInstance } from "winston-mongodb";
 import winston from "winston";
 import { DB_URI } from "../constants";
 
+console.log("db-uri", DB_URI);
 export const logger = winston.createLogger({
   level: "info",
   format: winston.format.json(),
