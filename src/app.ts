@@ -19,7 +19,7 @@ app.use(AppRouter.getInstance());
 app.use(express.static("public"));
 
 //app.use("/api/v1/portfolios", require("./routes/portfolios"));
-//app.use("/api/v1/blogs", require("./routes/blogs"));
+//app.use("/api/v1/blogs", require("./routes/blogs"))
 
 app.get("/", (req, res) => {
   res.sendFile("index.html");
