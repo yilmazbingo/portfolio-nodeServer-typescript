@@ -4,6 +4,8 @@ import "./models/Portfolio";
 import "./models/Blog";
 import { DB_URI } from "../constants";
 
+console.log("prod", process.env.NODE_ENV);
+
 console.log("dbuti", DB_URI);
 export const connect = () => {
   return mongoose.connect(
