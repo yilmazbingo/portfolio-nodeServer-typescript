@@ -4,7 +4,7 @@ const nodeWebExternals = require("webpack-node-externals");
 
 module.exports = {
   entry: ["regenerator-runtime/runtime", "./src/index.ts"],
-  mode: "development",
+  mode: process.env.NODE_ENV,
   target: "node",
   // "npm-run-all build dev:start" because of watching, dev:start wouldnot be execured
   // watch: true,
