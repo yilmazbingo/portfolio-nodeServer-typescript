@@ -6,7 +6,7 @@ import { DB_URI } from "../constants";
 
 export const connect = () => {
   return mongoose.connect(
-    " mongodb+srv://yilmaz:programci1040@cluster0.qrw9h.mongodb.net/portfolio?retryWrites=true&w=majority",
+    DB_URI!,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

@@ -4,12 +4,13 @@ const logger = Debug("dev");
 logger("process ", process.env.DB_PROD_URI);
 import { connect } from "./db";
 import { app } from "./app";
+import { DB_URI } from "./constants";
 
 //  declare function logger:debugger
 //  global.logger=debugger
 
 const start = async () => {
-  if (!process.env.DB_URI) {
+  if (!DB_URI) {
     throw new Error("Database url must be passed");
   }
   await connect();

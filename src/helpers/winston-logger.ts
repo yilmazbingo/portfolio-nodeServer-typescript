@@ -2,7 +2,6 @@ import MongoDB, { MongoDBTransportInstance } from "winston-mongodb";
 import winston from "winston";
 import { DB_URI } from "../constants";
 
-console.log("db-uri", DB_URI);
 export const logger = winston.createLogger({
   level: "info",
   format: winston.format.json(),
@@ -10,8 +9,7 @@ export const logger = winston.createLogger({
   transports: [
     new winston.transports.File({ filename: "error.log", level: "error" }),
     new MongoDB.MongoDB({
-      db:
-        " mongodb+srv://yilmaz:programci1040@cluster0.qrw9h.mongodb.net/portfolio?retryWrites=true&w=majority",
+      db: DB_URI!,
     }),
     // new winston.transports.
   ],
