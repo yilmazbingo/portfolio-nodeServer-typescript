@@ -9,7 +9,10 @@ export const logger = winston.createLogger({
   defaultMeta: { service: "user-service" },
   transports: [
     new winston.transports.File({ filename: "error.log", level: "error" }),
-    new MongoDB.MongoDB({ db: DB_URI! }),
+    new MongoDB.MongoDB({
+      db:
+        " mongodb+srv://yilmaz:programci1040@cluster0.qrw9h.mongodb.net/portfolio?retryWrites=true&w=majority",
+    }),
     // new winston.transports.
   ],
 });
