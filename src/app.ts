@@ -2,11 +2,11 @@ import "express-async-errors";
 import express, { Response, Request, NextFunction } from "express";
 import bodyParser from "body-parser";
 import { errorHandler } from "./middlewares";
-import("./controllers/blogs");
-import("./controllers/portfolios");
-import { connect } from "./db";
+import path from "path";
 import { AppRouter } from "./AppRouter";
 import cors from "cors";
+import("./controllers/blogs");
+import("./controllers/portfolios");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 }, cors({ maxAge: 84600 }));
 app.use(AppRouter.getInstance());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 //app.use("/api/v1/portfolios", require("./routes/portfolios"));
 //app.use("/api/v1/blogs", require("./routes/blogs"))
