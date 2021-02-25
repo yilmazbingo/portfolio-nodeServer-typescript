@@ -9,7 +9,12 @@ import("./controllers/blogs");
 import("./controllers/portfolios");
 
 const app = express();
-
+function ignoreFavicon(req: Request, res: Response, next: NextFunction) {
+  if (req.originalUrl.includes("favicon.ico")) {
+    res.status(204).end();
+  }
+  next();
+}
 app.use(bodyParser.json());
 //app.use(Cors);
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -17,6 +22,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 }, cors({ maxAge: 84600 }));
 app.use(AppRouter.getInstance());
 app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(ignoreFavicon);
 
 //app.use("/api/v1/portfolios", require("./routes/portfolios"));
 //app.use("/api/v1/blogs", require("./routes/blogs"))
