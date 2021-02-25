@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
 app.get("/me", (req, res) => {
   res.send("yilm");
 });
+app.get("/favicon.ico", function (req, res) {
+  res.status(204);
+  res.end();
+});
 app.use(errorHandler);
 
 export { app };

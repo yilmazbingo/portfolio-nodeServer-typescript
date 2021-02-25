@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
 import slugify from "slugify";
+import Debug, { Debugger } from "debug";
 import uniqueSlug from "unique-slug";
 import { checkJwt, checkRole } from "../middlewares";
 import { Blog, BlogDoc } from "../db/models/Blog";
 import { getAccessToken, getAuth0User } from "../helpers";
 import { get, controller, use, post, patch } from "./decorators";
+
+const logger = Debug("dev");
 
 interface Authors {
   [key: string]: Author;
@@ -37,8 +40,9 @@ class BlogController {
       createdAt: -1,
     });
     const { access_token } = await getAccessToken();
+    logger("accessToken", access_token);
     const blogsWithUsers = [];
-    const authors: Authors = {}; // this is mapping userId={author}
+    const authors: Authors = {};
     // using promise in map gave me issue
     for (let blog of blogs) {
       const author: Author =
@@ -101,6 +105,7 @@ class BlogController {
   @use(checkJwt)
   async createBlog(req: Request, res: Response) {
     let blogData = req.body;
+    logger("blogData", blogData);
     blogData.userId = req.user.sub;
     const { access_token } = await getAccessToken();
 
