@@ -74,6 +74,7 @@ class BlogController {
         "blockchain",
         "angular",
         "python",
+        "algorithms",
       ].includes(req.params.id)
     ) {
       const blogs = await Blog.find({
