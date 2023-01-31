@@ -1,11 +1,11 @@
-{
-  "presets": ["@babel/preset-env", "@babel/preset-typescript"],
-  "plugins": [
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    "@babel/plugin-proposal-object-rest-spread"
-  ]
-}
+// {
+//   "presets": ["@babel/preset-env", "@babel/preset-typescript"],
+//   "plugins": [
+//     ["@babel/plugin-proposal-decorators", { "legacy": true }],
+//     ["@babel/plugin-proposal-class-properties", { "loose": true }],
+//     "@babel/plugin-proposal-object-rest-spread"
+//   ]
+// }
 
 //If you are using ["@babel/plugin-proposal-decorators", { "legacy": true }], make sure it comes *before* "@babel/plugin-proposal-class-properties" and enable loose mode, like so:
 // ["@babel/plugin-proposal-decorators", { "legacy": true }]
