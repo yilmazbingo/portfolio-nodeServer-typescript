@@ -4,7 +4,7 @@
   "description": "server for portfolio",
   "main": "index.js",
   "engines": {
-    "node": ">=14 <18"
+    "node": "v16.18.0"
   },
   "scripts": {
     "build": "webpack",
