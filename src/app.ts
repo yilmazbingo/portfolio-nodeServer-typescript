@@ -16,7 +16,7 @@ function ignoreFavicon(req: Request, res: Response, next: NextFunction) {
   next();
 }
 app.use(bodyParser.json());
-//app.use(Cors);
+// app.use(Cors);
 app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 }, cors({ maxAge: 84600 }));
