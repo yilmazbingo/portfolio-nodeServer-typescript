@@ -10,7 +10,7 @@
     "build": "webpack",
     "dev:start": "nodemon --watch src  --exec \"node -r dotenv/config --trace-deprecation  dist/bundle.js \" ",
     "dev": "npm-run-all build dev:start",
-    "start": "node src/dist/bundle.js",
+    "start": "node dist/bundle.js",
     "tsc:build": "tsc -w",
     "tsc:start": "nodemon --watch src  --exec \"node -r dotenv/config   build/index.js \""
   },

@@ -10,7 +10,7 @@ module.exports = {
   // watch: true,
   output: {
     filename: "bundle.js",
-    path: path.join(__dirname, "src", "dist"),
+    path: path.join(__dirname, "dist"),
   },
   module: {
     // babel-loader was bundling separate files for decorators. use ts-loader
